@@ -1,10 +1,10 @@
 from django.urls import path
-from api.v1.food.views import foods, singleFood, create, delete, update
+from api.v1.food.views import food, singleFood, create, delete, update
 
 urlpatterns = [
-    path("",foods),
+    path("",food),
     path("view/<int:pk>/",singleFood),
     path("create/",create),
     path('delete/<int:pk>/',delete),
-     path('update/<int:pk>/',update),
+    path('update/<int:pk>/',update),
 ] 

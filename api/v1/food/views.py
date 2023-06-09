@@ -2,14 +2,14 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated, AllowAny
 
-from foods.models import Food
-from api.v1.foods.serializers import FoodSerializer, FoodDetailSerializer
+from food.models import Food
+from api.v1.food.serializers import FoodSerializer, FoodDetailSerializer
 from django.db.models import Q
 
 
 @api_view(["GET"])
 @permission_classes([IsAuthenticated])
-def foods(request):
+def food(request):
     instances = Food.objects.filter(is_deleted = False)
 
     q = request.GET.get("q")
